@@ -1,0 +1,17 @@
+# Apple Domains
+.apple.com
+.icloud.com
+.apple-dns.net
+.apple-cloudkit.com
+.akadns.net
+.itunes.apple.com
+.gs.apple.com
+.push.apple.com
+.cdn-apple.com
+
+# Apple Services & Updates
+.albert.apple.com
+.guzzoni.apple.com
+.mzstatic.com
+.api.apple-cloudkit.com
+.captive.apple.com
