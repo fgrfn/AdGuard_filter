@@ -1,0 +1,8 @@
+# GitHub Copilot / Microsoft
+.github.com
+.githubusercontent.com
+.github.copilot.microsoft.com
+.copilot-proxy.githubusercontent.com
+.microsoft.com
+.azureedge.net
+.visualstudio.com
