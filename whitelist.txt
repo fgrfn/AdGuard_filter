@@ -1,0 +1,33 @@
+# Apple Domains
+.apple.com
+.icloud.com
+.apple-dns.net
+.apple-cloudkit.com
+.akadns.net
+.itunes.apple.com
+.gs.apple.com
+.push.apple.com
+.cdn-apple.com
+
+# Apple Services & Updates
+.albert.apple.com
+.guzzoni.apple.com
+.mzstatic.com
+.api.apple-cloudkit.com
+.captive.apple.com
+
+# GitHub Copilot / Microsoft
+.github.com
+.githubusercontent.com
+.github.copilot.microsoft.com
+.copilot-proxy.githubusercontent.com
+.microsoft.com
+.azureedge.net
+.visualstudio.com
+
+# OpenAI / ChatGPT
+.openai.com
+.chat.openai.com
+.auth0.openai.com
+.api.openai.com
+.platform.openai.com
