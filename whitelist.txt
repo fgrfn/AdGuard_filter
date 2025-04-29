@@ -25,6 +25,8 @@
 *.azureedge.net
 *.visualstudio.com
 
+*.privateinternetaccess.com
+
 # OpenAI / ChatGPT
 *.openai.com
 *.chat.openai.com
