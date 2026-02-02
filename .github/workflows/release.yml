@@ -1,0 +1,66 @@
+name: Auto Release auf whitelist.txt Änderungen
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'whitelist.txt'
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Letzte Version ermitteln
+        id: get_version
+        run: |
+          # Versuche das letzte Tag zu holen
+          LAST_TAG=$(git tag -l "v*" --sort=-v:refname | head -n 1)
+          
+          if [ -z "$LAST_TAG" ]; then
+            # Kein Tag vorhanden, starte mit 1.0.1
+            NEW_VERSION="1.0.1"
+          else
+            # Extrahiere Version ohne 'v' Präfix
+            LAST_VERSION=${LAST_TAG#v}
+            
+            # Splitte Version in Major, Minor, Patch
+            IFS='.' read -r MAJOR MINOR PATCH <<< "$LAST_VERSION"
+            
+            # Inkrementiere Patch-Version
+            PATCH=$((PATCH + 1))
+            NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+          fi
+          
+          echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
+          echo "tag=v$NEW_VERSION" >> $GITHUB_OUTPUT
+          echo "Neue Version: v$NEW_VERSION"
+      
+      - name: Release erstellen
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.get_version.outputs.tag }}
+          name: Release ${{ steps.get_version.outputs.tag }}
+          body: |
+            🎉 Automatisches Release nach Aktualisierung der whitelist.txt
+            
+            **Version:** ${{ steps.get_version.outputs.version }}
+            **Datum:** ${{ github.event.head_commit.timestamp }}
+            
+            ### Änderungen
+            Commit: ${{ github.event.head_commit.message }}
+            Autor: ${{ github.event.head_commit.author.name }}
+          files: |
+            whitelist.txt
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
