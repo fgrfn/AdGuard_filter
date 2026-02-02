@@ -25,11 +25,12 @@
 *.azureedge.net
 *.visualstudio.com
 
-*.privateinternetaccess.com
-
 # OpenAI / ChatGPT
 *.openai.com
 *.chat.openai.com
 *.auth0.openai.com
 *.api.openai.com
 *.platform.openai.com
+
+# Sonstige
+*.privateinternetaccess.com
