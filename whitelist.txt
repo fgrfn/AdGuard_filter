@@ -32,5 +32,34 @@
 *.api.openai.com
 *.platform.openai.com
 
-# Sonstige
+# VPN
 *.privateinternetaccess.com
+
+# Microsoft Services
+*.live.com
+*.office.com
+*.office365.com
+*.windows.com
+*.update.microsoft.com
+*.msftconnecttest.com
+
+# CDNs (Content Delivery Networks)
+*.cloudflare.com
+*.cloudflaressl.com
+*.akamaihd.net
+*.fastly.net
+
+# Google Services
+*.google.com
+*.googleapis.com
+*.gstatic.com
+*.youtube.com
+*.googlevideo.com
+
+# Development Tools
+*.mozilla.org
+*.firefox.com
+*.docker.com
+*.docker.io
+*.npmjs.org
+*.npmjs.com
