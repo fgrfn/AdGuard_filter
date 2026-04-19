@@ -45,7 +45,7 @@ jobs:
           echo "Neue Version: v$NEW_VERSION"
       
       - name: Release erstellen
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ steps.get_version.outputs.tag }}
           name: Release ${{ steps.get_version.outputs.tag }}
